@@ -4,7 +4,7 @@ import subprocess
 
 def video_download(url):
 
-    subprocess.run(['yt-dlp', url])
+    subprocess.run(['yt-dlp','-f','bv*[height=1080]+ba', url, '-o','%(playlist_index)s -%(title)s.%(ext)s'])
     print('Finished downloading your video!')
 
 def audio_download(url):
