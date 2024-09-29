@@ -1,7 +1,12 @@
 
 import subprocess
 #import settings
-
+def module_update(module):
+    try:
+        subprocess.run(['pip', 'install', '--upgrade', '--upgrade-strategy', 'only-if-needed', module])
+    except Exception:
+        print(f'Unable to update {module}!')
+        
 def video_download(url):
 
     subprocess.run(['yt-dlp','-f','bv*[height=1080]+ba', url, '-o','%(playlist_index)s -%(title)s.%(ext)s'])
@@ -15,7 +20,7 @@ def audio_download(url):
 
 if __name__ == '__main__':
     l = True
-    
+    module_update('yt-dlp)
     while l:
         url = input('Enter url:  ')
         choice = input('Enter a-audio/v-video/c-cancel:   ')
