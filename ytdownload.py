@@ -20,7 +20,7 @@ def audio_download(url):
 
 if __name__ == '__main__':
     l = True
-    module_update('yt-dlp)
+    module_update('yt-dlp')
     while l:
         url = input('Enter url:  ')
         choice = input('Enter a-audio/v-video/c-cancel:   ')
