@@ -15,9 +15,9 @@ def audio_download(url):
 
 if __name__ == '__main__':
     l = True
-    url = input('Enter url:  ')
+    
     while l:
-
+        url = input('Enter url:  ')
         choice = input('Enter a-audio/v-video/c-cancel:   ')
 
         if choice == 'a':
@@ -29,4 +29,8 @@ if __name__ == '__main__':
             break
         else:
             print('Enter valid choice!')
+
+        choice = input('Exit? (y/n)\t')
+        if choice == 'y':
+            l = False
 
