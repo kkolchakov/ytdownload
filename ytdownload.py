@@ -4,8 +4,8 @@ import subprocess
 def module_update(module):
     try:
         subprocess.run(['pip', 'install', '--upgrade', '--upgrade-strategy', 'only-if-needed', module])
-    except Exception:
-        print(f'Unable to update {module}!')
+    except Exception as e:
+        print(f'Unable to update {module}!\n\t{e}')
         
 def video_download(url):
 
